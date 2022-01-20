@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(121.73% 181.92% at 6.77% 4.33%, rgb(79, 82, 117) 0%, rgb(51, 48, 75) 100%);
+}
+
+.grid-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.grid-container .pokemon {
+    /* background-color: aliceblue; */
+
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+    
+
+    padding: 25px 50px;
+    text-align: center;
+    color: black;
+    text-transform: capitalize;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+.grid-container .pokemon:hover {
+    transform: translateY(-20px);
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    backdrop-filter: blur(20px);
+}
+
+.overlay-open {
+    top: 0;
+}
+
+.overlay .modal {
+    width: 400px;
+    height: 400px;
+
+
+    background: linear-gradient(to right, #ACB6E5, #74ebd5);     
+
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    transition: 0.2s ease-in;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overlay .modal h2 {
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+.overlay .modal-open {
+    top: 50%;
+}
+
+.ability {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ability p {
+    padding: 8px 16px;
+
+    background: linear-gradient(to right, #191654, #43C6AC); 
+
+    color: white;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 12px;
+
+    
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ability p:hover {
+    background: linear-gradient(to right, #43C6AC, #191654); 
+}
+
+.stats {
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 0 20px;
+}
+
+.mainBack {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainBack p {
+    font-size: 13px;
+    text-transform: capitalize;
+} 
+
+.back {
+    position: relative;
+    width: 100%;
+    height: 13px;
+    border-radius: 5px;
+    border: 1px solid #FBAB7E;
+
+    background-color: white;
+    /* background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%); */
+    
+}
+
+.front {
+    height: 120%;
+
+    position: absolute;
+    top: -10%;
+    left: 0;
+    border-radius: 3px;
+
+
+}
+
+.test {
+    width: 100%;
+    height: 100%;
+
+
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    
+
+    border-radius: 3px;
+
+    animation-name: animate;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-duration: 1.3s;
+}
+
+@keyframes animate {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+        height: auto;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    } 
+
+    .pokemon {
+        width: 100%;
+        height: 100%;
+    }
+
+    .modal {
+        width: 100%;
+    }
+
+}
